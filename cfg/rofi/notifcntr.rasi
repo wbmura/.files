@@ -11,17 +11,29 @@ configuration {
 window {    
     location:	                    northwest;
 	anchor:		                    northwest;
-    x-offset:                       0px;
-    y-offset:                       0px;
+	    x-offset:                       3%;
+    y-offset:                       24%;
     transparency:                   "real";
-    line-margin:                    1;
-    line-padding:                   1;
-	width:						    30%;
-    height:							100%;
-    // border:                         14px;
+	width:							19%;
+    border:                         14px;
     border-color:                   @background;
+    font:                           "Sarasa Mono CL Nerd Font 8.2";
 }
 
+entry {
+    enabled:                        false;
+    background-color:               #0E1112;
+    text-color:                     @foreground;
+    placeholder-color:              @foreground;
+    expand:                         true;
+    horizontal-align:               0;
+    padding:                        4px;
+    margin:                         2px;
+    blink:                          true;
+    border:                         0 0 4px 0;
+    border-color:                   @border;
+    border-radius:                  10px;
+}
 prompt {
     background-color:               @background;
     text-color:                     @foreground;
@@ -51,7 +63,7 @@ listview {
 
 mainbox {
     background-color:               @background;
-	// border:							4px;
+        border:							4px;
 	border-color:					@border;
     children:                       [ inputbar, listview ];
     spacing:                       	0%;
@@ -75,7 +87,7 @@ element-icon, element-text {
 element-icon {
     horizontal-align:               0.5;
     vertical-align:                 0.5;
-    size:                           48px;
+    size:                           38px;
     margin:                         0px 0px 0px 12px;
     border:                         12px;
     border-color:                   transparent;
