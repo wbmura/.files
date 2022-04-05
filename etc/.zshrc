@@ -58,7 +58,7 @@ alias cat="bat"
 alias du="duf"
 alias ls="exa"
 alias find="fd"
-alias nf="neofetch"
+alias pf="pfetch"
 alias vi="nvim"
 
 # Init starship

@@ -9,6 +9,7 @@ fi
 
 # Fix the x-shaped cursor on root window.
 xsetroot -cursor_name left_ptr
-
+xrandr -s 1920x1080
+nmcli device set wlp3s0 managed no
 # Autostart the window manager.
 exec bspwm

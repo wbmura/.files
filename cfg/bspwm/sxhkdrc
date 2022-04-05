@@ -1,9 +1,5 @@
-# ##############################################################################
-# #                                   KEYBINDS                                 #
-# ##############################################################################
-
-# NOTE: This is directly ported from my i3wim config.
-
+# Keybinds
+ 
 # Focus next/prev window
 super + {_,shift + }f
     bspc node -f {next,prev}.local.!hidden.window
@@ -52,11 +48,11 @@ super + Return
     tabbed -n "term" alacritty -t "term" --embed
 
 # Open browser
-super + b
+super + w
     firefox
 
 # Open application menu
-super + a
+super + d
     sh $HOME/.local/bin/appmnu
 
 # Toggle notif center
