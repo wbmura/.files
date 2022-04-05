@@ -1,21 +1,4 @@
 <h2 align="center"> ━━━━━━  ❖  ━━━━━━ </h2>
-
-<!-- BADGES -->
-<div align="center">
-   <p></p>
-   <a href="https://github.com/janleigh/dotfiles/stargazers">
-      <img src="https://img.shields.io/github/stars/janleigh/dotfiles?color=%23ffb29b&labelColor=%230B0F10&style=for-the-badge">
-   </a>
-   <a href="https://github.com/janleigh/dotfiles/network/members/">
-      <img src="https://img.shields.io/github/forks/janleigh/dotfiles?color=%237ba5dd&labelColor=%230B0F10&style=for-the-badge">
-   </a>
-   <img src="https://img.shields.io/github/repo-size/janleigh/dotfiles?color=%23ee6a70&labelColor=%230B0F10&style=for-the-badge">
-   <a href="https://discord.gg/2RfJb3CVfb">
-      <img src="https://img.shields.io/discord/853812920919261235?color=cb92f2&labelColor=0B0F10&style=for-the-badge"/>
-   </a>
-   <br>
-</div>
-
 <p/>
 
 <h2></h2>
@@ -51,7 +34,7 @@
 
    > First of all, this repository contains submodules. Ensure they are updated before installing.
    ```sh
-    $ git clone --recurse-submodules https://github.com/janleigh/dotfiles.git
+    $ git clone --recurse-submodules https://github.com/wbmura/.files.git
     $ cd dotfiles && git submodule update --remote --merge
    ```
 
