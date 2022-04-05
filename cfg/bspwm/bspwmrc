@@ -1,84 +1,36 @@
 #!/bin/sh
 
-# ##############################################################################
-# #                                  ENV VARS                                  # 
-# ##############################################################################
-
 export BROWSER=firefox
 export EDITOR=nvim
 export _JAVA_AWT_WM_NONREPARENTING=1 # Fix for JetBrains IDEs
-
-pgrep -x sxhkd > /dev/null || sxhkd &
-
-# ##############################################################################
-# #                                  FUNCTIONS                                 # 
-# ##############################################################################
 
 # Credits to 6gk/polka
 rule() { bspc rule -a "$@" & }
 config() { bspc config "$@" & }
 start() { pkill -x "$1"; { sleep 0.1; "$@" & }; }
 
-# ##############################################################################
-# #                                AUTOSTART APPS                              #
-# ##############################################################################
-
-# Autostart Apps
-# $HOME/.local/bin/eww daemon &
+# Autostart
+pgrep -x sxhkd > /dev/null || sxhkd -c $HOME/.config/bspwm/sxhkdrc &
 $HOME/.local/bin/eww open bar &
 dunst --config $HOME/.config/dunst/dunstrc &
 picom --config $HOME/.config/picom/picom.conf &
-
-# Start polkit agent
-/usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1 &
-
-# Set wallpaper
-# hsetroot -fill "$HOME/Pictures/walls/personal/personal-6.jpg"
-# Hex Gang
-hsetroot -solid "#192022"
-
-# I hate mouse drift.
-xset m 0 0
-
-# Fix for eww bar not hiding on a fullscreen window.
+hsetroot -fill "$HOME/.config/bspwm/wall.jpg"
 $HOME/.config/bspwm/bin/ewwFlScr &
 
-# ##############################################################################
-# #                                 WINDOW RULES                               #
-# ##############################################################################
-
 bspc monitor -d 1 2 3 4 5 6
-
-rule Vivaldi-stable                 desktop=1
 rule firefox                        desktop=1
 rule discord                        desktop=2
-rule Code                           desktop=3
-rule Client                         desktop=3 state=floating
-rule lunarclient                    desktop=3 state=tiled
-rule Lutris                         desktop=5 state=floating
-rule Steam                          desktop=5
-rule mpv                            state=floating
+rule Lutris                         desktop=3 state=floating
+rule Steam                          desktop=4
 rule Viewnior                       state=floating
 
-# bspc config external_rules_command  "$HOME/.config/bspwm/scripts/spotify_wmclass.sh"
-
-# ##############################################################################
-# #                            GENERAL CONFIGURATION                           #
-# ##############################################################################
-
 config pointer_modifier             Mod4
-
-# config border_width                 20
 config window_gap                   16
-
 config left_padding                 46
 
 config split_ratio                  0.62
 config borderless_monocle           true
 config gapless_monocle              true
 
-# ##############################################################################
-# #                                 MISCELLANEOUS                              #
-# ##############################################################################
-
 start $HOME/.local/bin/brdr
+
